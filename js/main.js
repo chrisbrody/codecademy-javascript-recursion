@@ -49,6 +49,7 @@ function factorial2(n) {
 }
 factorial2(3)
 
+
 // 07/26 ----- Within the first if statement (our termination condition), write a message to the console indicating that negative numbers are not allowed.
 function factorial3(n) {
   if (n < 0) {
@@ -65,7 +66,20 @@ factorial3(-1);
 factorial3(5);
 
 
-// 08/26 ----- 
+// 08/26 ----- Press Run.  Hmm... something is wrong.  Look closely at the last line in the factorial function definition, and change it so that the factorial works properly. 
+function factorial(n) {
+  // Termination condition to prevent infinite recursion
+  if (n < 0) {
+    console.log("Can't make a factorial from a negative number.");
+    return;
+  }
+  // Base case
+  if (n === 0) { return 1; }
+  // What's wrong with this picture? Why won't this recursion work?
+  return n * factorial(n - 1);
+}
+factorial(6);
+
 
 // 09/26 ----- 
 
